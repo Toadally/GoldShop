@@ -104,9 +104,7 @@ public class ClickEvent implements Listener{
 		if(true) {
 			
 			Block b = e.getClickedBlock();
-			if(!(e.getClickedBlock().getState() instanceof Sign)) { p.sendMessage("failure"); return; }
-			
-			p.sendMessage("success");
+			if(!(e.getClickedBlock().getState() instanceof Sign)) { return; }
 			
 			Sign sign = (Sign) b.getState();
 			
