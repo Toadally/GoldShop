@@ -1,0 +1,8 @@
+name: EMCShop
+author: Toadally
+version: 1.0
+main: us.toadally.emcshop.EMCShop
+
+commands:
+  withdraw:
+    description: Withdraws all money from shops
