@@ -60,6 +60,8 @@ public class ClickEvent implements Listener{
 				
 				if(SignUtil.isValidSign(sign.getLines())) {
 					
+					if(e.getPlayer().getUniqueId().toString().equalsIgnoreCase(SignUtil.getOwner(sign))) { return;}
+					
 					Chest chest = (Chest) b.getState();
 					
 					Inventory i = chest.getInventory();
@@ -141,7 +143,7 @@ public class ClickEvent implements Listener{
 				
 				for(ItemStack is : chest.getBlockInventory().getContents()) {
 					if(is != null) {
-						((Player) owner).sendMessage(ChatColor.GREEN + p.getName() + " purchased "+amount + " " + getItemName(is) +" from your shop!");
+						((Player) owner).sendMessage(ChatColor.GREEN + p.getName() + " purchased "+amount + " " + is.getType().toString() +" from your shop!");
 						break;
 					}
 				}

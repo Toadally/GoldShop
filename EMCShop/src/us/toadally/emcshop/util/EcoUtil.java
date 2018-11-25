@@ -34,9 +34,7 @@ public class EcoUtil {
 		int newBars = getGoldBars(totalNuggets);
 		int newNuggets = getGoldNuggets(totalNuggets);
 		
-		p.getInventory().remove(Material.GOLD_BLOCK);
-		p.getInventory().remove(Material.GOLD_INGOT);
-		p.getInventory().remove(Material.GOLD_NUGGET);
+		
 		
 		
 		if(!(getEmptySlots(p) > (newBlocks - (newBlocks % 64))) || 
@@ -45,7 +43,9 @@ public class EcoUtil {
 			
 			return "You don't have enough space in your inventory to sort out your gold.";
 		}
-		
+		p.getInventory().remove(Material.GOLD_BLOCK);
+		p.getInventory().remove(Material.GOLD_INGOT);
+		p.getInventory().remove(Material.GOLD_NUGGET);
 		if(getEmptySlots(p) > (newBlocks - (newBlocks % 64))) {
 			p.getInventory().addItem(new ItemStack(Material.GOLD_BLOCK, newBlocks));
 		}
